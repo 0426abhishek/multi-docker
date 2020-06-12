@@ -4,10 +4,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t 0426abhishek/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t 0426abhishek/multi-docker -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run 0426abhishek/react-test npm test -- --coverage --watchAll=false
+  - docker run 0426abhishek/multi-docker npm test -- --coverage --watchAll=false
 
 after_sucess:
   - docker build -t 0426abhishek/multi-client ./client
