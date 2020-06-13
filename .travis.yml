@@ -23,3 +23,17 @@ after_sucess:
   - docker push "$DOCKER_ID"/multi-nginx
   - docker push "$DOCKER_ID"/multi-server
   - docker push "$DOCKER_ID"/multi-worker
+
+# Deploy Application to AWS Server into ElasticBeanStalk
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "us-west-1"
+#   app: "multi-docker"
+#   env: "MultiDocker-env"
+#   bucket_name: "elasticbeanstalk-us-west-1-306476627547" (S3 bucket name)
+#   bucket_path: docker-multi
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: "$AWS_SECRET_KEY"
